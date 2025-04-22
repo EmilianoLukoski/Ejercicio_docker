@@ -70,7 +70,7 @@ async def main():
         counter_queue = asyncio.Queue()
 
         tasks = [
-            asyncio.create_task(dispatcher(client, [topic1, topic2]), name="Dispatcher"),
+            asyncio.create_task(dispatcher(client, [topic1, topic2]), name="Task"),
             asyncio.create_task(incrementar_contador(counter_queue), name="Incrementador"),
             asyncio.create_task(publicar_contador(client, counter_queue, topic_pub), name="Publicador"),
         ]
